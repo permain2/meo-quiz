@@ -13,27 +13,27 @@ interface ThankYouProps {
 const PRODUCTS = [
   {
     name: "Berberine",
-    slug: "berberine",
+    slug: "berberine-supplement",
     badge: "Best Seller",
     benefit: "Supports healthy blood sugar & metabolic function",
-    price: "$24.99",
-    image: "https://cdn.shopify.com/s/files/1/0694/3840/6879/files/Berberine.png?v=1706111637",
+    price: "$39.99",
+    image: "https://cdn.shopify.com/s/files/1/0694/3840/6879/files/Berberine_Supplement.webp?v=1734089983",
   },
   {
     name: "Ashwagandha",
-    slug: "ashwagandha",
+    slug: "ashwagandha-supplement",
     badge: "Popular",
     benefit: "Promotes calm, restful sleep & stress relief",
-    price: "$19.99",
-    image: "https://cdn.shopify.com/s/files/1/0694/3840/6879/files/Ashwagandha.png?v=1706111637",
+    price: "$39.99",
+    image: "https://cdn.shopify.com/s/files/1/0694/3840/6879/files/Ashwagandha_Supplement.webp?v=1737551146",
   },
   {
-    name: "Magnesium Glycinate",
-    slug: "magnesium-glycinate",
+    name: "Beetroot",
+    slug: "beetroot-supplement-1",
     badge: "Top Rated",
-    benefit: "Supports heart health & muscle recovery",
-    price: "$21.99",
-    image: "https://cdn.shopify.com/s/files/1/0694/3840/6879/files/Magnesium_Glycinate.png?v=1706111637",
+    benefit: "Supports heart health & natural energy",
+    price: "$39.99",
+    image: "https://cdn.shopify.com/s/files/1/0694/3840/6879/files/Beetroot_Supplement.webp?v=1738244050",
   },
 ];
 
@@ -204,7 +204,7 @@ export function ThankYou({ discountCode, storeUrl, archetype }: ThankYouProps) {
             className="block"
           >
             <LiquidMetalButton
-              label="Shop Now — 15% Off Applied"
+              label="Shop Now — 25% Off Applied"
               onClick={() => {}}
             />
           </a>
@@ -224,7 +224,7 @@ export function ThankYou({ discountCode, storeUrl, archetype }: ThankYouProps) {
       {/* Section 4: Bestseller Products */}
       <div className="stagger-item" style={{ animationDelay: "0.8s" }}>
         <p className="text-brand-subtext text-sm mb-5">
-          Your 15% off works on all our products — here are our most loved:
+          Your 25% off works on all our products — here are our most loved:
         </p>
         <div className="flex flex-col gap-3">
           {PRODUCTS.map((product) => (
