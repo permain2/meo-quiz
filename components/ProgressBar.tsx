@@ -6,7 +6,9 @@ interface ProgressBarProps {
 }
 
 export function ProgressBar({ current, total }: ProgressBarProps) {
-  const pct = ((current + 1) / total) * 100;
+  // Endowed progress: start at 12% so it never looks like zero
+  const endowedStart = 12;
+  const pct = endowedStart + ((current) / total) * (100 - endowedStart);
 
   return (
     <div className="w-full mb-10">

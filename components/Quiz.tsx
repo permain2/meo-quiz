@@ -17,6 +17,7 @@ export function Quiz({ email, discountCode, storeUrl }: QuizProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [completed, setCompleted] = useState(false);
+  const [encouragement, setEncouragement] = useState<string | null>(null);
 
   const handleAnswer = useCallback(
     async (value: string) => {
@@ -32,7 +33,17 @@ export function Quiz({ email, discountCode, storeUrl }: QuizProps) {
       }
 
       if (currentIndex < questions.length - 1) {
-        setCurrentIndex((i) => i + 1);
+        // Show encouragement micro-copy before transitioning
+        const msg = question.encouragement;
+        if (msg) {
+          setEncouragement(msg);
+          setTimeout(() => {
+            setEncouragement(null);
+            setCurrentIndex((i) => i + 1);
+          }, 1200);
+        } else {
+          setCurrentIndex((i) => i + 1);
+        }
       } else {
         setCompleted(true);
         if (email) {
@@ -68,11 +79,23 @@ export function Quiz({ email, discountCode, storeUrl }: QuizProps) {
   return (
     <div>
       <ProgressBar current={currentIndex} total={questions.length} />
-      <div className="relative">
-        {questions.map((q, i) => (
-          <QuestionCard key={q.id} question={q} onAnswer={handleAnswer} visible={i === currentIndex} />
-        ))}
-      </div>
+
+      {/* Encouragement micro-copy between questions */}
+      {encouragement && (
+        <div className="flex items-center justify-center py-12 animate-fade-in">
+          <p className="text-brand-navy/70 text-lg font-medium italic">
+            {encouragement}
+          </p>
+        </div>
+      )}
+
+      {!encouragement && (
+        <div className="relative">
+          {questions.map((q, i) => (
+            <QuestionCard key={q.id} question={q} onAnswer={handleAnswer} visible={i === currentIndex} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
