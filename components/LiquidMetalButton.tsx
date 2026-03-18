@@ -42,8 +42,8 @@ export function LiquidMetalButton({
           {
             u_repetition: 4,
             u_softness: 0.5,
-            u_shiftRed: 0.25,
-            u_shiftBlue: 0.15,
+            u_shiftRed: 0.15,
+            u_shiftBlue: 0.35,
             u_distortion: 0,
             u_contour: 0,
             u_angle: 45,
@@ -131,29 +131,29 @@ export function LiquidMetalButton({
             <span
               className="text-sm font-bold uppercase tracking-widest"
               style={{
-                color: disabled ? "#444" : "#555",
-                textShadow: "0px 1px 2px rgba(0, 0, 0, 0.6)",
+                color: disabled ? "#aaa" : "#ffffff",
+                textShadow: "0px 1px 3px rgba(0, 0, 0, 0.3)",
               }}
             >
               {label}
             </span>
           </div>
 
-          {/* Inner dark layer */}
+          {/* Inner navy layer */}
           <div
             className="absolute inset-0"
             style={{
-              transform: `translateZ(10px)`,
+              transform: "translateZ(10px)",
               zIndex: 20,
             }}
           >
             <div
-              className={`${fullWidth ? "w-full" : ""}`}
+              className={fullWidth ? "w-full" : ""}
               style={{
                 height: "48px",
                 margin: "2px",
                 borderRadius: "14px",
-                background: "linear-gradient(180deg, #1a1a1a 0%, #000000 100%)",
+                background: "linear-gradient(180deg, #1a3580 0%, #0f2058 100%)",
                 boxShadow: isPressed
                   ? "inset 0px 2px 4px rgba(0, 0, 0, 0.4)"
                   : "none",
@@ -166,18 +166,18 @@ export function LiquidMetalButton({
           <div
             className="absolute inset-0"
             style={{
-              transform: `translateZ(0px)`,
+              transform: "translateZ(0px)",
               zIndex: 10,
             }}
           >
             <div
-              className={`${fullWidth ? "w-full" : ""}`}
+              className={fullWidth ? "w-full" : ""}
               style={{
                 height: "52px",
                 borderRadius: "14px",
                 boxShadow: isHovered
-                  ? "0px 0px 0px 1px rgba(200, 169, 126, 0.3), 0px 8px 16px rgba(0, 0, 0, 0.3)"
-                  : "0px 0px 0px 1px rgba(255, 255, 255, 0.06), 0px 4px 12px rgba(0, 0, 0, 0.2)",
+                  ? "0px 0px 0px 1px rgba(20, 43, 111, 0.4), 0px 8px 16px rgba(20, 43, 111, 0.2)"
+                  : "0px 0px 0px 1px rgba(20, 43, 111, 0.15), 0px 4px 12px rgba(20, 43, 111, 0.1)",
                 transition: "box-shadow 0.3s ease",
                 overflow: "hidden",
               }}
@@ -225,7 +225,7 @@ export function LiquidMetalButton({
                   width: "20px",
                   height: "20px",
                   borderRadius: "50%",
-                  background: "radial-gradient(circle, rgba(200, 169, 126, 0.4) 0%, transparent 70%)",
+                  background: "radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%)",
                   pointerEvents: "none",
                   animation: "ripple-animation 0.6s ease-out",
                 }}

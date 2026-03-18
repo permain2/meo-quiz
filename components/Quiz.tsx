@@ -52,8 +52,8 @@ export function Quiz({ email, discountCode, storeUrl }: QuizProps) {
   if (!email) {
     return (
       <div className="text-center py-20">
-        <h2 className="text-2xl font-bold mb-4">Oops!</h2>
-        <p className="text-brand-muted">
+        <h2 className="text-2xl font-bold mb-4 text-brand-navy">Oops!</h2>
+        <p className="text-brand-subtext">
           This quiz is meant to be accessed from your email.<br />
           Check your inbox for the link from Meo Nutrition.
         </p>
