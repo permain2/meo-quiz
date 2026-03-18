@@ -11,7 +11,7 @@ function QuizPage() {
   return (
     <Quiz
       email={email}
-      discountCode={process.env.NEXT_PUBLIC_DISCOUNT_CODE ?? "THANKYOU15"}
+      discountCode={process.env.NEXT_PUBLIC_DISCOUNT_CODE ?? "THANKYOU25"}
       storeUrl={process.env.NEXT_PUBLIC_STORE_URL ?? "https://meonutrition.com"}
     />
   );

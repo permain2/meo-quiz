@@ -7,6 +7,7 @@ import { identifyProfile, trackEvent } from "@/lib/klaviyo";
 import { ProgressBar } from "./ProgressBar";
 import { QuestionCard } from "./QuestionCard";
 import { ThankYou } from "./ThankYou";
+import { WelcomeScreen } from "./WelcomeScreen";
 
 interface QuizProps {
   email: string | null;
@@ -15,6 +16,7 @@ interface QuizProps {
 }
 
 export function Quiz({ email, discountCode, storeUrl }: QuizProps) {
+  const [started, setStarted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [completed, setCompleted] = useState(false);
@@ -76,6 +78,10 @@ export function Quiz({ email, discountCode, storeUrl }: QuizProps) {
   if (completed) {
     const archetype = classifyArchetype(answers.quiz_identity || "");
     return <ThankYou discountCode={discountCode} storeUrl={storeUrl} archetype={archetype} />;
+  }
+
+  if (!started) {
+    return <WelcomeScreen onStart={() => setStarted(true)} />;
   }
 
   return (
