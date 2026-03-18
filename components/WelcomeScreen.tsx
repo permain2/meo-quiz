@@ -11,51 +11,57 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
     <div className="text-center py-6 stagger-reveal">
       {/* Eyebrow */}
       <p className="text-brand-muted text-xs uppercase tracking-[0.25em] mb-6 stagger-item">
-        2-minute health profile
+        For Meo customers only
       </p>
 
       {/* Headline */}
       <h1 className="text-3xl md:text-4xl font-bold text-brand-navy leading-tight mb-4 stagger-item">
-        Discover your unique
+        Help us get to know you.
         <br />
-        health identity
+        Get 25% off as a thank you.
       </h1>
 
       {/* Subtext */}
-      <p className="text-brand-subtext text-base leading-relaxed max-w-xs mx-auto mb-8 stagger-item">
-        Answer 7 short questions and we&apos;ll reveal your wellness
-        profile — plus an exclusive reward just for you.
+      <p className="text-brand-subtext text-base leading-relaxed max-w-sm mx-auto mb-8 stagger-item">
+        7 quick questions about your health journey.
+        We&apos;ll use your answers to build better products
+        — and you&apos;ll unlock your personal wellness
+        profile + a 25% discount on your next order.
       </p>
 
-      {/* Trust indicators */}
-      <div className="flex items-center justify-center gap-6 mb-10 stagger-item">
-        <div className="flex items-center gap-1.5 text-brand-muted text-xs">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      {/* Value props */}
+      <div className="flex flex-col items-center gap-3 mb-10 stagger-item">
+        <div className="flex items-center gap-2.5 text-brand-navy text-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" />
           </svg>
-          Private &amp; anonymous
+          Your unique health identity revealed
         </div>
-        <div className="flex items-center gap-1.5 text-brand-muted text-xs">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
+        <div className="flex items-center gap-2.5 text-brand-navy text-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" />
           </svg>
-          Takes ~2 min
+          25% off your next order — applied instantly
+        </div>
+        <div className="flex items-center gap-2.5 text-brand-navy text-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          Takes less than 2 minutes
         </div>
       </div>
 
       {/* CTA */}
       <div className="max-w-xs mx-auto stagger-item">
         <LiquidMetalButton
-          label="Discover My Profile"
+          label="Start — It's Quick"
           onClick={onStart}
         />
       </div>
 
-      {/* Social proof */}
+      {/* Privacy note */}
       <p className="text-brand-muted text-xs mt-6 stagger-item">
-        Trusted by 12,000+ Meo customers
+        Your answers are private and help us serve you better.
       </p>
     </div>
   );
