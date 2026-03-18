@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { questions } from "@/lib/questions";
+import { classifyArchetype } from "@/lib/archetypes";
 import { identifyProfile, trackEvent } from "@/lib/klaviyo";
 import { ProgressBar } from "./ProgressBar";
 import { QuestionCard } from "./QuestionCard";
@@ -73,7 +74,8 @@ export function Quiz({ email, discountCode, storeUrl }: QuizProps) {
   }
 
   if (completed) {
-    return <ThankYou discountCode={discountCode} storeUrl={storeUrl} />;
+    const archetype = classifyArchetype(answers.quiz_identity || "");
+    return <ThankYou discountCode={discountCode} storeUrl={storeUrl} archetype={archetype} />;
   }
 
   return (
