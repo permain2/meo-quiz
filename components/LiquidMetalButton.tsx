@@ -145,6 +145,7 @@ export function LiquidMetalButton({
             style={{
               transform: "translateZ(10px)",
               zIndex: 20,
+              pointerEvents: "none",
             }}
           >
             <div
@@ -168,6 +169,7 @@ export function LiquidMetalButton({
             style={{
               transform: "translateZ(0px)",
               zIndex: 10,
+              pointerEvents: "none",
             }}
           >
             <div
