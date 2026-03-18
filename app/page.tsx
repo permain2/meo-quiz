@@ -6,7 +6,7 @@ import { Quiz } from "@/components/Quiz";
 
 function QuizPage() {
   const searchParams = useSearchParams();
-  const email = searchParams.get("email");
+  const email = searchParams.get("email") || (searchParams.has("preview") ? "preview@test.com" : null);
 
   return (
     <Quiz
